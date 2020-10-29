@@ -1,0 +1,35 @@
+--Made by: https://v3rmillion.net/member.php?action=profile&uid=677809
+--Popp (Made the script)
+--Open Source feel free to change anything
+for i,v in pairs(game.Workspace:GetChildren()) do
+if v:FindFirstChild("Humanoid") == nil then --Player check
+else
+if game.Players[v.Name].Character:FindFirstChild("Humanoid").RigType ~= Enum.HumanoidRigType.R6 then
+if v:FindFirstChild("HumanoidRootPart") == nil then --Detects if HumanoidRootPart still exist
+if v:FindFirstChild("Head") == nil then
+print(v.Name.." Is a dead player that has fallen into the void.")
+else
+game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(v.Name.." deleted his HumanoidRootPart","All")
+end
+else
+if v:FindFirstChild("UpperTorso") == nil then --Detects if Torso Still exist
+game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(v.Name.." Is using Invisible fling","All")
+else
+end
+end
+else
+if v:FindFirstChild("HumanoidRootPart") == nil then --Detects if HumanoidRootPart still exist
+if v:FindFirstChild("Head") == nil then
+print(v.Name.." Is a dead player that has fallen into the void.")
+else
+game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(v.Name.." deleted his HumanoidRootPart","All")
+end
+else
+if v:FindFirstChild("Torso") == nil then --Detects if Torso Still exist
+game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(v.Name.." Is using Invisible fling","All")
+else
+end
+end
+end
+end
+end

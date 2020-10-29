@@ -1,0 +1,2 @@
+--https://v3rmillion.net/member.php?action=profile&uid=1289763
+game:GetService("Workspace").FallenPartsDestroyHeight = math.huge-math.huge

@@ -1,0 +1,8 @@
+--while wait() do wait(1)
+local User = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+for i,v in pairs(game.workspace.^^^Path^^^:GetChildren()) do
+   if v.Name == "^^^Name^^^" then
+       v.CFrame = User
+   end
+end
+end

@@ -1,0 +1,42 @@
+--https://v3rmillion.net/showthread.php?tid=1091000
+local print_on_click = false
+local seperate_lines = true
+local create_document_on_click = true
+--//
+if isfolder("onClickStats") == true then
+else
+makefolder("onClickStats")
+end
+local plr = game:GetService("Players").LocalPlayer
+local mouse = plr:GetMouse()
+mouse.Button1Down:Connect(function()
+local random_var = tostring(math.random(0,1000000))
+if print_on_click == true then
+if seperate_lines == false then
+print""
+print("start of function "..random_var)
+print("[HumanoidRootPart.Position]: "..tostring(plr.Character.HumanoidRootPart.Position)..",[Mouse.X]: "..tostring(mouse.X)..",[Mouse.Y]: "..tostring(mouse.Y)..",[Mouse.Target]: "..tostring(mouse.Target)..",[Mouse.Hit]: "..tostring(mouse.hit.p)..",[Camera.CFrame]: "..tostring(game:GetService("Workspace").CurrentCamera.CFrame.p)..",[Camera.Focus]: "..tostring(game:GetService("Workspace").CurrentCamera.Focus))
+print("end of function "..random_var)
+print""
+else
+print""
+print("start of function "..random_var)
+print("[HumanoidRootPart.Position]: "..tostring(plr.Character.HumanoidRootPart.Position))
+print("[Mouse.X]: "..tostring(mouse.X))
+print("[Mouse.Y]: "..tostring(mouse.Y))
+print("[Mouse.Target]: "..tostring(mouse.Target))
+print("[Mouse.Hit]: "..tostring(mouse.hit.p))
+print("[Camera.CFrame]: "..tostring(game:GetService("Workspace").CurrentCamera.CFrame.p))
+print("[Camera.Focus]: "..tostring(game:GetService("Workspace").CurrentCamera.Focus))
+print("end of function "..random_var)
+print""
+end
+end
+if create_document_on_click == true then
+if seperate_lines == false then
+writefile("/onClickStats/"..random_var..".txt","[HumanoidRootPart.Position]: "..tostring(plr.Character.HumanoidRootPart.Position)..",[Mouse.X]: "..tostring(mouse.X)..",[Mouse.Y]: "..tostring(mouse.Y)..",[Mouse.Target]: "..tostring(mouse.Target)..",[Mouse.Hit]: "..tostring(mouse.hit.p)..",[Camera.CFrame]: "..tostring(game:GetService("Workspace").CurrentCamera.CFrame.p)..",[Camera.Focus]: "..tostring(game:GetService("Workspace").CurrentCamera.Focus))
+else
+writefile("/onClickStats/"..random_var..".txt","[HumanoidRootPart.Position]: "..tostring(plr.Character.HumanoidRootPart.Position).."\n[Mouse.X]: "..tostring(mouse.X).."\n[Mouse.Y]: "..tostring(mouse.Y).."\n[Mouse.Target]: "..tostring(mouse.Target).."\n[Mouse.Hit]: "..tostring(mouse.hit.p).."\n[Camera.CFrame]: "..tostring(game:GetService("Workspace").CurrentCamera.CFrame.p).."\n[Camera.Focus]: "..tostring(game:GetService("Workspace").CurrentCamera.Focus))
+end
+end
+end)

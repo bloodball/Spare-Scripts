@@ -1,0 +1,9 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/vep1032/VepStuff/main/VL", true))()
+
+local Window = Library:Window("Window")
+
+local Tab = Window:Tab("Tab")
+
+Tab:Button("Button", function()
+print("Test")
+end)
